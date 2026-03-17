@@ -26,7 +26,7 @@ jobs:
         run: mvn clean package
 
       - name: Upload WAR rild
-        uses: actions/upload-artifect@v4
+        uses: actions/upload-artifact@v4
         with:
           name: app-war
           path: target/*.war
