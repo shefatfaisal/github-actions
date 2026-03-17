@@ -44,7 +44,7 @@ jobs:
         with:
           name: myapp
 
-      - name: Deploy WAR to Tomcat
+      - name: Deploy WAR to Tomcataa
         run: |
           WAR_FILE=$(ls *.war)
           echo "Deploying $WAR_FILE to tomace.."
