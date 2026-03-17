@@ -23,7 +23,7 @@ jobs:
 
 
       - name: build with Maven
-        run: mvn clean package --DskipTests
+        run: mvn clean package -DskipTests
 
       - name: List target folder
         run: ls -la target/
