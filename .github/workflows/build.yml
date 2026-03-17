@@ -30,3 +30,10 @@ jobs:
         with:
           name: app-war
           path: target/*.war
+
+      - name: Deploy WAR to Tomcat
+        run: |
+          WAR_FILE=$(ls *.war)
+          echo "Deploying $WAR_FILE to tomace.."
+          curl -v --upload-file "$WAR_FILE" \
+                                           "http://${{ secrets.TOMCAT_USERNAME}}:${{ secrets.TOMCAT_PASSWORD }}@${{ secrets.TOMCAT_URL }}/manager/text/deploy?path=/myapp&update=true"
